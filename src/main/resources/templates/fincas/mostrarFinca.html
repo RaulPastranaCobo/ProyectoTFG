@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Vista de fincas</title>
+<link rel="stylesheet" type="text/css" href="../static/css/mostrartodos.css" th:href="@{/css/mostrartodos.css}" />
+</head>
+<body>
+
+<table>
+<tr>
+	<th>Nombre</th>
+	<th>Superficie</th>
+	<th>Fecha</th>
+	<th>Referencia</th>
+</tr>
+<tr th:each="finca: ${fincas}">
+	<td th:text="${finca.nombre}" />
+	<td th:text="${finca.superficie}" />
+	<td th:text="${finca.fecha}" />
+	<td th:text="${finca.referencia}" />
+	<td><a th:href="@{/fincas/eliminar(idfinca=${finca.idfinca})}">Eliminar</a></td>
+	<td><a th:href="@{/fincas/formmodificar(idfinca=${finca.idfinca})}">Modificar</a></td>
+</tr>
+
+
+</table>
+
+<p><a th:href="@{/fincas/forminsertar}">Insertar una Finca</a></p>
+</body>
+</html>

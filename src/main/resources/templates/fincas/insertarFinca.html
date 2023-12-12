@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insertar finca</title>
+<link rel="stylesheet" type="text/css" href="../css/insertartodos.css" th:href="@{/css/insertartodos.css}" />
+</head>
+<body>
+
+<h1>Insertar Finca</h1>
+
+<form method="post" th:action="@{/fincas/insertar}" th:object="${finca}" required>
+	<h6>Nombre: <input type="text" th:field="*{nombre}" required></h6>
+	<h6>Fecha: <input type="date" th:field="*{fecha}" required></h6>
+	<h6>Superficie: <input type="text" th:field="*{superficie}" required></h6>
+	<h6>Referencia: <input type="text" th:field="*{referencia}" required></h6>
+
+
+	<input type="submit" value="Insertar">
+	<p><a th:href="@{/fincas/mostrar}">Volver al listado de las Fincas</a></p>
+
+
+
+</form>
+
+</body>
+</html>
